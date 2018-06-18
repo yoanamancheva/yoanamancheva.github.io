@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<title>Added Profile</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+	html { 
+		background: url("collage.png") no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	.container{
+		border-radius: 15px;
+		background-color: #f2f2f2;
+		padding: 30px;
+		width: 35%; 
+		margin: auto;
+		margin-top: -380px;
+		
+	
+	}
+	input[type=text],input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+	
+	[type="text"] {color: #111;}
+	[type="password"] {color: #111;}
+	
+	label {
+		color: #8c8c8c;
+		font-size: 20px;
+	}
+	.title {
+		color: #545454;
+		font-size: 30px;
+		text-align: center;
+	}
+	.quote {
+		color: #8c8c8c;
+		font-size: 20px;
+		text-align: center;
+	}
+	.button {
+		  display: inline-block;
+		  padding: 15px 25px;
+		  font-size: 24px;
+		  cursor: pointer;
+		  text-align: center;
+		  text-decoration: none;
+		  outline: none;
+		  color: white;
+		  background-color: gray;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 9px #999;
+		  width: 90%;
+	}
+	.button:hover {background-color: dark gray}
+	.button:active {
+		  background-color:dark gray ;
+		  box-shadow: 0 4px #666;
+		  transform: translateY(4px);
+	}
+	.button2 {
+		  display: inline-block;
+		  padding: 15px 25px;
+		  font-size: 24px;
+		  cursor: pointer;
+		  text-align: center;
+		  text-decoration: none;
+		  outline: none;
+		  color: white;
+		  background-color: gray;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 9px #999;
+		  width: 20%;
+		  margin-top: 280px;
+		  margin-left: -250px;
+	}
+	.button2:hover {background-color: dark gray}
+	.button2:active {
+		  background-color:dark gray ;
+		  box-shadow: 0 4px #666;
+		  transform: translateY(4px);
+	}
+	.profile_picture{
+		border-radius: 50%
+	}
+
+	
+	
+
+	</style>
+	<header  style="padding:10px 16px" id="edit_profile">
+	</header>
+
+	<body>
+		<div style="padding: 60px">
+			<p style="float: left"><img src="logo2.png" class="profile_picture" width="250" height="250"></p>
+			<button class="button2"> Upload photo </button>
+		</div >
+
+		<form>
+			<div class="container">
+				<div class="title">Add more information to your profile</div><br>
+				
+				<label>Quote</label><br>
+				<input type="text" name="quote" value="Some inspirational quote."><br><br>
+				
+				<label>About me</label><br>
+				<input type="text" name="bio" style="height:100px" value="Some text about me..."><br><br>
+				<a href="profile_page.html"<button class="button"> Save changes </button></a>
+			</div>
+		</form>
+	</body>
+</html>

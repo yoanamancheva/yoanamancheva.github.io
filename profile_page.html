@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: gray;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: dark gray}
+
+.button:active {
+  background-color:dark gray ;
+  box-shadow: 0 4px #666;
+  transform: translateY(4px);
+}
+.button2 {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: -10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: gray;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+
+}
+
+.button2:hover {background-color: dark gray}
+
+.button2:active {
+  background-color:dark gray ;
+  box-shadow: 0 4px #666;
+  transform: translateY(4px);
+}
+.profile_picture{
+	border-radius: 50%
+}
+
+div.photos {
+    border: 1px solid #ccc;
+}
+
+div.photos:hover {
+    border: 1px solid #777;
+}
+
+div.photos img {
+    width: 100%;
+    height: 100%;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+
+.blur {
+    box-shadow: 0px 0px 20px 20px rgba(255,255,255,1);
+    text-shadow: 0px 0px 10px rgba(51, 51, 51, 0.9);
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; /* Enable scroll if needed */
+    background: blur;
+   /*
+    -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+   /*url("collage.png") no-repeat center fixed; 
+    -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;*/
+}
+
+/* Modal Content */
+.modal-content {
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    padding: 30px;
+    width: 35%; 
+    margin: auto;
+    position: relative;  
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: #545454;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.title {
+        color: #545454;
+        font-size: 30px;
+        text-align: center;
+}
+.title1 {
+        color: black;
+        font-size: 60px;
+        text-align: center;
+        margin-top: 180px;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.quote {
+        color: #8c8c8c;
+        font-size: 20px;
+        text-align: center;
+    }
+input[type=text],input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    
+    [type="text"] {color: #111;}
+    [type="password"] {color: #111;}
+    
+    label {
+        color: #8c8c8c;
+        font-size: 20px;
+    }
+.button {
+          display: inline-block;
+          padding: 15px 25px;
+          font-size: 24px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          outline: none;
+          color: white;
+          background-color: gray;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 9px #999;
+          width: 90%;
+    
+    }
+    .button:hover {background-color: dark gray}
+    .button:active {
+          background-color:dark gray ;
+          box-shadow: 0 4px #666;
+          transform: translateY(4px);
+    }
+
+.button1 {
+          display: inline-block;
+          padding: 15px 20px;
+          font-size: 24px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          outline: none;
+          color: white;
+          background-color: gray;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 9px #999;
+          width: 20%;
+          margin-top: 20px;
+       }
+.button1:hover {background-color: dark gray}
+.button1:active {
+        background-color:dark gray ;
+        box-shadow: 0 4px #666;
+        transform: translateY(4px);
+    }    
+.signup {
+        color: #545454;     
+        font-size: 20px;
+        text-decoration: none;
+        
+    }
+.logo {
+  width: 100px;
+  height: 200px;
+
+}
+/* Light box css*/
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal-image {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-image-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 45%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close-image {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close-image:hover,
+.close-image:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.myImageSlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+/* End of light box css*/
+
+
+</style>
+
+
+<header  style="padding:10px 16px" id="myProfile">
+    <div>
+		<p style="float: left"><a href="feed.html"><img src="home2.png" width="80" height="80" ></a></p>
+		<p style="float: right"><a href="sign_in.html"><img src="logout2.png" width="80" height="80" ></a></p>
+	</div>
+</header>
+
+<body>
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="title">
+      <span class="close">&times;</span>
+      La Dolce Vita
+    </div>
+    <div class="quote">Are you ready to upload? </div><br>
+    <div class="modal-body">
+      <label>Select image to upload</label><br><br><br>
+      <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+      <input type="submit" value="Upload Image" name="submit"><br><br>
+    </div>
+  </div>
+
+</div>
+<!-- The end of the modal -->
+
+<div>
+
+    <div style="padding: 60px">
+	<p style="float: left"><img src="profile_picture.jpg" class="profile_picture" width="250" height="250"></p>
+	<h1 style="text-align: center"><b>Jane Doe</b></h1>
+    <p style="text-align: center">Some inspirational quote.</p>
+	</div >
+	
+	<div style="text-align: center">
+    <button id="myBtn" class="button1">Upload Photos</button> 
+    <a href="edit_profile.html"><button class="button1"> Edit Profile </button></a>
+	</div>
+
+<br>
+  <!-- About Section -->
+  <div class="slideshow-container">
+
+<div class="mySlides">
+  <q>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</q>
+  </div>
+
+<div class="mySlides">
+  <q>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q>
+  </div>
+
+<div class="mySlides">
+  <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+  </div>
+
+
+<a class="prev" onclick="plusSlides(-1)"><</a>
+<a class="next" onclick="plusSlides(1)">></a>
+
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+  <!-- End About Section -->
+  </div>
+  
+
+
+<!-- Photos Section -->
+<div id="myPictures" style="padding: 10px">
+  <h2 style="text-align: center">My Photos</h2>
+  <hr>
+
+  <!-- Grid for photos -->
+  <div style="text-align: center">
+    <div class="responsive">
+      <div class="photos">
+        <!-- <a target="_blank" href="picture3.jpg"> -->
+          <img src="picture3.jpg" onclick="openModal();currentImageSlide(1)" class="hover-shadow cursor">
+        <!-- </a> -->
+        <div class="desc"> Description</div>
+        <a href="edit_picture.html"><button class="button2"> Edit Picture </button></a>
+      </div>
+
+    </div>
+
+    <div class="responsive">
+      <div class="photos">
+        <!-- <a target="_blank" href="picture4.jpg"> -->
+          <img src="picture4.jpg" onclick="openModal();currentImageSlide(2)" class="hover-shadow cursor">
+        <!-- </a> -->
+        <div class="desc"> Description</div>
+        <a href="edit_picture.html"><button class="button2"> Edit Picture </button></a>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="photos">
+        <!-- <a target="_blank" href="picture5.jpg"> -->
+          <img src="picture5.jpg" onclick="openModal();currentImageSlide(3)" class="hover-shadow cursor">
+        <!-- </a> -->
+        <div class="desc"> Description</div>
+        <a href="edit_picture.html"><button class="button2"> Edit Picture </button></a>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="photos">
+        <!-- <a target="_blank" href="picture2.jpg"> -->
+          <img src="picture2.jpg" onclick="openModal();currentImageSlide(4)" class="hover-shadow cursor">
+        <!-- </a> -->
+        <div class="desc"> Description</div>
+        <a href="edit_picture.html"><button class="button2"> Edit Picture </button></a>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="photos">
+        <!-- <a target="_blank" href="picture6.jpg"> -->
+          <img src="picture6.jpg" onclick="openModal();currentImageSlide(5)" class="hover-shadow cursor">
+        <!-- </a> -->
+        <div class="desc"> Description</div>
+        <a href="edit_picture.html"><button class="button2"> Edit Picture </button></a>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="photos">
+        <!-- <a target="_blank" href="picture1.jpg"> -->
+          <img src="picture1.jpg" onclick="openModal();currentImageSlide(6)" class="hover-shadow cursor">
+        <!-- </a> -->
+        <div class="desc"> Description</div>
+        <a href="edit_picture.html"><button class="button2"> Edit Picture </button></a>
+      </div>
+    </div>
+  </div>
+
+  <div id="myImageModal" class="modal-image">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-image-content">
+
+    <div class="myImageSlides">
+      <img src="picture3.jpg" style="width:100%">
+    </div>
+
+    <div class="myImageSlides">
+      <img src="picture4.jpg" style="width:100%">
+    </div>
+
+    <div class="myImageSlides">
+      <img src="picture5.jpg" style="width:100%">
+    </div>
+    
+    <div class="myImageSlides">
+      <img src="picture2.jpg" style="width:100%">
+    </div>
+
+    <div class="myImageSlides">
+      <img src="picture6.jpg" style="width:100%">
+    </div>
+
+    <div class="myImageSlides">
+      <img src="picture1.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusImageSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusImageSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="picture3.jpg" style="width:100%" onclick="currentImageSlide(1)" alt="Description">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="picture4.jpg" style="width:100%" onclick="currentImageSlide(2)" alt="Description">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="picture5.jpg" style="width:100%" onclick="currentImageSlide(3)" alt="Description">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="picture2.jpg" style="width:100%" onclick="currentImageSlide(4)" alt="Description">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="picture6.jpg" style="width:100%" onclick="currentImageSlide(5)" alt="Description">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="picture1.jpg" style="width:100%" onclick="currentImageSlide(6)" alt="Description">
+    </div>
+  </div>
+</div>
+<!-- End of photo section -->
+
+    </div>
+ 
+  </div>
+
+</div>
+
+<script>
+//Script for the about me section
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+
+//Script about the modal
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+/*========================================================*/
+/*Light box javascript*/
+      function openModal() {
+        document.getElementById('myImageModal').style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById('myImageModal').style.display = "none";
+      }
+
+      var imageSlideIndex = 1;
+      showImageSlides(imageSlideIndex);
+
+      function plusImageSlides(n) {
+        showImageSlides(imageSlideIndex += n);
+      }
+
+      function currentImageSlide(n) {
+        showImageSlides(imageSlideIndex = n);
+      }
+
+      function showImageSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("myImageSlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {imageSlideIndex = 1}
+          if (n < 1) {imageSlideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[imageSlideIndex-1].style.display = "block";
+            dots[imageSlideIndex-1].className += " active";
+            captionText.innerHTML = dots[imageSlideIndex-1].alt;
+          }
+
+
+/*End of the light box javascript*/
+
+</script>
+
+</body>
+
+</html>

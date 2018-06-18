@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<title>Edit picture</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: gray;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-top: -200px;
+}
+
+.button:hover {background-color: dark gray}
+
+.button:active {
+  background-color:dark gray ;
+  box-shadow: 0 4px #666;
+  transform: translateY(4px);
+}
+textarea {
+  width: 800px;
+  height: 300px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  margin-left: 345px;
+}
+
+.profile_picture{
+	border-radius: 50%
+}
+
+div.photos {
+  border: 1px solid #ccc;
+}
+
+div.photos:hover {
+  border: 1px solid #777;
+}
+
+div.photos img {
+  width: 100%;
+  height: 100%;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+
+
+<header  style="padding:10px 16px" id="myProfile">
+  <div>
+    <p style="float: left"><a href="feed.html"><img src="home2.png" width="80" height="80" ></a></p>
+    <p style="float: right"><a href="sign_in.html"><img src="logout2.png" width="80" height="80" ></a></p>
+  </div>
+</header>
+
+<body>
+
+  <div>
+
+    <div style="padding: 60px">
+      <p style="float: left"><img src="profile_picture.jpg" class="profile_picture" width="250" height="250"></p>
+    </div>
+    <img src="rome2.jpg" width="800" height="400">
+    <textarea id="textbox">
+      An amazing trip to Italy! &#x2708; &#x1F497;
+     #love #italy #beautiful #monument #history
+   </textarea>
+   <script type="text/javascript">
+    function toggleEmojiBar(){
+      var emojiBar = document.getElementById('app')
+      if(emojiBar.style.opacity == 0){
+        emojiBar.style.opacity = 1;
+      }else{
+        emojiBar.style.opacity=0;
+      }
+    }
+  </script>
+  <input type="image" src="Wink-Emoji.png" width="50px" onclick="toggleEmojiBar()"/>
+  <div id="app" style="opacity:0; display:inline-block"></div>
+  <script src="app/bundle.js"></script>
+  <div style="text-align: center">
+    <a href="profile_page.html"><button class="button"> Save changes </button></a>
+    <a href="profile_page.html"><button class="button"> Discard changes </button></a>
+    <a href="profile_page.html"><button class="button"> Delete Picture </button></a>
+  </div>
+
+  <br>
+  
+</div>
+
+
+<div class="clearfix"></div>
+
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

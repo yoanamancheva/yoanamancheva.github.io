@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<title>Edit Profile</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+	html { 
+		background: url("collage.png") no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	.container{
+		border-radius: 15px;
+		background-color: #f2f2f2;
+		padding: 30px;
+		width: 35%; 
+		margin: auto;
+		
+	
+	}
+	input[type=text],input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+	
+	[type="text"] {color: #111;}
+	[type="password"] {color: #111;}
+	
+	label {
+		color: #8c8c8c;
+		font-size: 20px;
+	}
+	.title {
+		color: #545454;
+		font-size: 30px;
+		text-align: center;
+	}
+	.quote {
+		color: #8c8c8c;
+		font-size: 20px;
+		text-align: center;
+	}
+	.button {
+		  display: inline-block;
+		  padding: 15px 25px;
+		  font-size: 24px;
+		  cursor: pointer;
+		  text-align: center;
+		  text-decoration: none;
+		  outline: none;
+		  color: white;
+		  background-color: gray;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 9px #999;
+		  width: 90%;
+	}
+	.button:hover {background-color: dark gray}
+	.button:active {
+		  background-color:dark gray ;
+		  box-shadow: 0 4px #666;
+		  transform: translateY(4px);
+	}
+	.profile_picture{
+		border-radius: 50%
+	}
+
+	
+	
+
+	</style>
+	<header  style="padding:10px 16px" id="edit_profile">
+	</header>
+
+	<body>
+		<div style="padding: 60px">
+			<p style="float: left"><img src="profile_picture.jpg" class="profile_picture" width="250" height="250"></p>
+		</div >
+		<form>
+			<div class="container">
+				<div class="title">Edit Profile</div><br>
+				<label>Name</label><br>
+				<input type="text" name="username" value="Jane Doe"><br><br>
+				<label>Quote</label><br>
+				<input type="text" name="quote" value="Some inspirational quote."><br><br>
+				<label>Password</label><br>
+				<input type="password" name="password" placeholder="***********"><br><br>
+				<label>Confirm password</label><br>
+				<input type="password" name="password2" placeholder="***********"><br><br>
+				<label>About me</label><br>
+				<input type="text" name="bio" style="height:100px" value="Some text about me..."><br><br>
+				<a href="profile_page.html"<button class="button"> Save changes </button></a>
+				<br><br><br>
+				<div style="text-align: center">
+					<img src="logo3.png" style="width: 20px; height: 35px; margin: auto;">
+				</div>
+				<div style="text-align: center">
+					<a href="parallax.html" style="color: #8c8c8c; text-decoration: none; font-size: 20px;">About Us</a><br><br><br><br>
+					<a href="feed_guest.html" style=" color: red; font-size: 15px;">Deactivate Profile</a>
+
+				</div>
+				
+			
+				
+			</div>
+		</form>
+	</body>
+	
+</html>

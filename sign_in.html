@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { background: url("collage.png") no-repeat center fixed;
+ -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; /* Enable scroll if needed */
+    background: url("collage.png") no-repeat center fixed; 
+    -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+
+/* Modal Content */
+.modal-content {
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    padding: 30px;
+    width: 35%; 
+    margin: auto;
+    position: relative;  
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: #545454;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* The Close Button */
+.close_up {
+    color: #545454;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close_up:hover,
+.close_up:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.title {
+        color: #545454;
+        font-size: 30px;
+        text-align: center;
+}
+.title1 {
+        color: black;
+        font-size: 60px;
+        text-align: center;
+        margin-top: 180px;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.quote {
+        color: #8c8c8c;
+        font-size: 20px;
+        text-align: center;
+    }
+input[type=text],input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    
+    [type="text"] {color: #111;}
+    [type="password"] {color: #111;}
+    
+    label {
+        color: #8c8c8c;
+        font-size: 20px;
+    }
+.button {
+          display: inline-block;
+          padding: 15px 25px;
+          font-size: 24px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          outline: none;
+          color: white;
+          background-color: gray;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 9px #999;
+          width: 90%;
+    
+    }
+    .button:hover {background-color: dark gray}
+    .button:active {
+          background-color:dark gray ;
+          box-shadow: 0 4px #666;
+          transform: translateY(4px);
+    }
+
+.button1 {
+          display: inline-block;
+          padding: 15px 25px;
+          font-size: 24px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          outline: none;
+          color: white;
+          background-color: gray;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 9px #999;
+          width: 15%;
+          margin-top: 20px;
+       }
+.button1:hover {background-color: dark gray}
+.button1:active {
+        background-color:dark gray ;
+        box-shadow: 0 4px #666;
+        transform: translateY(4px);
+    }    
+.signup {
+        color: #545454;     
+        font-size: 20px;
+        text-decoration: none;
+        
+    }
+.logo {
+  width: 100px;
+  height: 200px;
+}
+/* Validation form css 
+/* Style all input fields */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Style the container for inputs */
+.container {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#message p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<!-- Trigger/Open The Modal -->
+<div class="title1">La Dolce Vita</div>
+<div style="text-align:center">
+	<img src="logo3.png" class="logo">
+</div>
+<div style="text-align:center">
+	<button id="myBtn" class="button1">Sign In</button><br><br>
+</div>
+<div style="text-align:center">
+	<label id="mylink" style="color: black; text-decoration:strong">Not a member?</label>
+</div>
+
+<!-- The Sign in modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="title">
+      <span class="close">&times;</span>
+      Welcome to La Dolce Vita
+    </div>
+    <div class="quote">Are you ready to join the elite? </div><br>
+    <div class="modal-body">
+      <label>Email</label><br>
+      <input type="text" name="email" placeholder="email@yahoo.com"><br><br>
+      <label>Password</label><br>
+      <input type="password" name="password" placeholder="***********"><br><br>
+      <a href="profile_page.html"<button class="button"> Sign In </button></a><br><br>
+    </div>
+  </div>
+
+</div>
+
+<!-- The sign up modal -->
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="title">
+      <span class="close_up">&times;</span>
+      Welcome to La Dolce Vita
+    </div>
+    <div class="quote">Are you ready to join the elite? </div><br>
+    <div class="modal-body">
+      <label>Name</label><br>
+        <input type="text" id="usrname" name="usrname" placeholder="Audrey Hepburn">
+        <p id="response" style="color:red"></p>
+        <label>Email</label><br>
+        <input type="text" id = "email" name="email" placeholder="email@yahoo.com">
+        <p id="response4" style="color:red"></p>
+        <label>Password</label><br>
+        <input type="password" id="psw" name="psw" placeholder="***********">
+        <label>Confirm password</label><br>
+        <input type="password" id="pass2" name="password" placeholder="***********">
+        <p id="response3" style="color:red"></p>
+        <a type="submit" href="added_profile.html"<button class="button"> Sign Up </button></a><br>      
+    </div>
+  </div>
+
+</div>
+
+<script>
+/*Validaciq na registraciqta. Raboti otdelno, tyk NE.
+function validate() {
+    var x, y, z, w, errorx, errory, errorz, errorw;
+    x = document.getElementById("username").value;
+  y = document.getElementById("pass").value;
+  z = document.getElementById("pass2").value;
+  w = document.getElementById("email").value;
+  
+  var patt = /^(\w)+$/gi;
+
+    // If the user name is between 3 and 10 symbols, contains letters, digits and underscore
+    if (x.length >= 3 && x.length <= 10 && patt.test(x)) {
+        errorx = "Input username OK";
+    } else {
+        errorx = "Input username invalid";
+    document.getElementById("response").innerHTML = errorx;
+    return false;   
+    }
+  
+    //if the password is longer than 6 symbols, contains at least 1 upper case, at least 1 lower case and at least 1 digit
+  var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");  
+  
+  //if the two passwords match and are not null
+  if(y != null && z != null && y == z && strongRegex.test(y)) {
+    errorz = "Password match";
+  } else {
+    errorz = "Wrong password input";
+    document.getElementById("response3").innerHTML = errorz;
+    return false;
+  }
+  // email validation 
+  var re = new RegExp ("^[a-z]+[0-9]*[a-z]*@[a-z]+\.[a-z]+$");
+  if (w != null && re.test(w))
+  //if ( w != "")
+  {
+    errorw = "Email OK";
+  } 
+    else {
+        errorw = "Wrong email";
+    document.getElementById("response4").innerHTML = errorw;
+    return false;   
+    }
+
+
+  return true;
+}
+*/
+
+/* validation js*/
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+    document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+    document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Get the sign in modal
+var modal = document.getElementById('myModal');
+
+//Get the sign up modal
+var modal2 = document.getElementById('myModal2')
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+//Get the link that opens the second modal
+var link = document.getElementById("mylink");
+
+// Get the <span> element that closes the sign in modal
+var span = document.getElementsByClassName("close")[0];
+
+// Get the <span> element that closes the sign up modal
+var span_up = document.getElementsByClassName("close_up")[0];
+
+
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks the link, open the sign in modal
+link.onclick = function() {
+    modal2.style.display = "block";
+}
+
+
+// When the user clicks on <span> (x), close the sign in modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks on the <span> (x), close the sign up modal
+span_up.onclick = function() {
+  modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the sign in modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// When the user clicks anywhere outside of the sign up modal, close it
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+
+
+</script>
+
+</body>
+</html>
